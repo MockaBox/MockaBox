@@ -26,9 +26,18 @@ Todos los botones escriben al **+593 99 837 3559** con el mensaje ya armado:
 
 Si cambia el número, se edita en un solo lugar por página (el campo WhatsApp en Tweaks) y se vuelve a compilar.
 
+## Ranking del juego
+
+Los puntajes se guardan en Supabase (proyecto `mockabox`), así que el Top 5 lo ven todas las personas que abran la página, desde cualquier teléfono.
+
+- Tabla `puntajes` en Supabase → Table Editor. Ahí puedes borrar registros de prueba o tramposos.
+- El Top muestra solo los puntajes **del día de hoy**; el histórico completo queda en el panel.
+- Un nombre aparece una sola vez, con su mejor puntaje del día.
+- Si Supabase no responde, la página cae a la tabla local del teléfono y sigue funcionando.
+
 ## Qué falta definir
 
 - **Dirección**: hoy dice "pendiente" en el pie. Manda el enlace de Google Maps y lo conecto.
 - **Horarios**: 6:30 am – 7:00 pm (ya puestos; el estado "Abierto / Cerrado" de la página de pedidos usa ese rango).
 - **Costo de envío**: la página dice que se confirma por WhatsApp según el sector.
-- **Premio de la semana**: definir qué se entrega al primer puesto del juego.
+- **Premio del día**: definir qué se entrega al primer puesto. La tabla muestra los puntajes del día y se reinicia sola a la medianoche.
